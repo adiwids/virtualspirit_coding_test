@@ -1,0 +1,22 @@
+name: Test
+on:
+  push:
+    branches: main
+jobs:
+  test:
+    permissions:
+      contents: read
+    runs-on: ubuntu-latest
+    environment: test
+    strategy:
+      matrix:
+        ruby-version: ['3.2', '3.1', '2.9', '2.8', '2.7']
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: ${{ matrix.ruby-version }}
+    - name: Run tests
+      run: gem install minitest --no-document
+      run: ruby test/*_test.rb
