@@ -18,11 +18,11 @@ The other requirement is I want this app to scan a path DYNAMICALLY. This means 
 ## Requirement
 
 * Ruby `2.7` and above
+* `minitest` gem
 
 ## Run Test
 
 ```
-$ bundle install
 $ ruby test/*_test.rb
 ```
 
