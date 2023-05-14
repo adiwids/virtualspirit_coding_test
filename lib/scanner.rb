@@ -6,4 +6,3 @@ class Scanner
   end
 end
 
-Scanner.new.cli_output

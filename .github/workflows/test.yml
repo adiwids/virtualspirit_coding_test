@@ -18,5 +18,4 @@ jobs:
       with:
         ruby-version: ${{ matrix.ruby-version }}
     - name: Run tests
-      run: gem install minitest --no-document
-      run: ruby test/*_test.rb
+      run: gem install minitest --no-document >/dev/null && ruby test/*_test.rb
