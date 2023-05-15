@@ -11,4 +11,18 @@ class ScannerTest < Minitest::Test
   def test_cli_output
     assert_output(stdout = /Welcome!/) { @scanner.test_cli }
   end
+
+  def test_scan_given_dir_path
+    @scanner.scan @files_dir, 'txt'
+    assert @scanner.files.any?
+  end
+
+  def test_scan_given_not_exist_path
+    assert_raises(ArgumentError) { @scanner.scan './not-exist-dir', 'txt' }
+  end
+
+  def test_scan_empty_dir_path
+    assert_raises(ArgumentError) { @scanner.scan File.join(@files_dir, 'empty-dir'), 'txt' }
+    assert @scanner.files.empty?
+  end
 end
