@@ -29,6 +29,6 @@ $ ruby test/*_test.rb
 ## Run Command
 
 ```
-$ ruby lib/scanner.rb [path]
+$ ruby scan.rb --path /path/to/directory --file-ext txt
 # Output: {file content} {files count}
 ```
