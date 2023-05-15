@@ -1,7 +1,7 @@
 class Scanner
   def initialize; end
 
-  def cli_output
+  def test_cli
     puts 'Welcome!'
   end
 end
